@@ -3,9 +3,20 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import axios from 'axios'
 
+/* axios START */
+import axios from 'axios'
 Vue.prototype.$http = axios
+/* axios END */
+
+/* Bootstrap START */
+import BootstrapVue from 'bootstrap-vue';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+Vue.use(BootstrapVue)
+/* Bootstrap END */
+
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
