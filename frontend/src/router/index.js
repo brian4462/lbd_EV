@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import IndexPage from '@/components/IndexPage'
-import BootstrapTest from '@/components/BootstrapTest'
 
 Vue.use(Router)
 
