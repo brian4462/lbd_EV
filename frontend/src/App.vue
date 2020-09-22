@@ -2,19 +2,15 @@
   <div id="app">
     <!-- <img src="./assets/logo.png"> -->
     <!--CONTAINER START-->
-    <b-container class="">
+    <b-container>
       <!--HAEDER START-->
       <div class="header">
         <b-row class="subject">
           <b-col>Lead By Daylight</b-col>
         </b-row>
-        <b-row class="top_menu">
+        <b-row class="menus">
           <b-col cols='2'></b-col>
-          <b-col>캐릭터</b-col>
-          <b-col>지도</b-col>
-          <b-col>공물</b-col>
-          <b-col>기능</b-col>
-          <b-col>공지</b-col>
+          <b-col v-for="menu in menus" v-bind:id="'MN'+menu.id" v-bind:key="menu.id">{{menu.menu_nm}}</b-col>
           <b-col cols='2'></b-col>
         </b-row>
       </div>
@@ -31,7 +27,21 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  data(){
+    return{
+        menus: [],
+    };
+  },
+  created(){
+    this.$http.get('/api/menus')
+    .then((res) => {
+        this.menus = res.data;
+    })
+    .catch((err)=>{
+        console.error(err);
+    });
+  }
 }
 </script>
 
