@@ -1,0 +1,22 @@
+--lbd 스키마 생성
+CREATE SCHEMA `lbd` DEFAULT CHARACTER SET utf8 ;
+
+--생존자 테이블 생성
+CREATE TABLE `lbd`.`lbd_survivors` (
+  `surv_id` INT NOT NULL AUTO_INCREMENT,
+  `surv_nm_ko` VARCHAR(30) NOT NULL,
+  `surv_nm_en` VARCHAR(30) NOT NULL,
+  `gender` CHAR(1) NULL,
+  `role` VARCHAR(15) NULL,
+  `race_nation` VARCHAR(30) NULL,
+  `voice_actor` VARCHAR(30) NULL,
+  `difficulty` VARCHAR(10) NULL,
+  `description` VARCHAR(2000) NULL,
+  `skill1_id` INT NULL,
+  `skill2_id` INT NULL,
+  `skill3_id` INT NULL,
+  `photo_path` VARCHAR(1000) NULL,
+  `photo_path2` VARCHAR(1000) NULL,
+  PRIMARY KEY (`surv_id`),
+  INDEX `idx_suvivors` (`surv_id`))
+COMMENT = '생존자 정보';
