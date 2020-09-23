@@ -4,10 +4,25 @@ const SidebarStore = {
   showSidebar: false,
   sidebarLinks: [
     {
-      name: 'Dashboard',
-      icon: 'ti-panel',
-      path: '/admin/overview'
-    }
+      name: '캐릭터',
+      icon: 'ti-user',
+      path: '/character'
+    },
+    {
+      name: '지도',
+      icon: 'ti-location-pin',
+      path: '/map'
+    },
+    {
+      name: '기능',
+      icon: 'ti-game',
+      path: '/func'
+    },
+    {
+      name: '공지',
+      icon: 'ti-announcement',
+      path: '/announcement'
+    },
   ],
   displaySidebar (value) {
     this.showSidebar = value

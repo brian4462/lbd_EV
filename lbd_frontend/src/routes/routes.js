@@ -7,23 +7,38 @@ import Overview from 'src/components/Dashboard/Views/Overview.vue'
 
 const routes = [
   {
-    path: '/',
+    path: "/",
     component: DashboardLayout,
-    redirect: '/admin/overview'
-  },
-  {
-    path: '/admin',
-    component: DashboardLayout,
-    redirect: '/admin/stats',
+    redirect: "/Overview",
     children: [
       {
-        path: 'overview',
-        name: 'overview',
+        path: "Overview",
+        name: "Overview",
+        component: Overview
+      },
+      {
+        path: "character",
+        name: "character",
+        component: Overview
+      },
+      {
+        path: "map",
+        name: "map",
+        component: Overview
+      },
+      {
+        path: "func",
+        name: "func",
+        component: Overview
+      },
+      {
+        path: "announcement",
+        name: "announcement",
         component: Overview
       }
     ]
   },
-  { path: '*', component: NotFound }
+  { path: "*", component: NotFound }
 ]
 
 export default routes

@@ -8,29 +8,23 @@
           <span class="icon-bar bar2"></span>
           <span class="icon-bar bar3"></span>
         </button>
-        <a class="navbar-brand">{{routeName}}</a>
+        <a class="navbar-brand" v-if="routeName=='Character'">캐릭터(Charcter)</a>
+        <a class="navbar-brand" v-else-if="routeName=='Map'">지도(Map)</a>
+        <a class="navbar-brand" v-else-if="routeName=='Func'">기능(Function)</a>
+        <a class="navbar-brand" v-else-if="routeName=='Announcement'">알림(Announcement)</a>
       </div>
       <div class="collapse navbar-collapse">
-        <ul class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav navbar-right" v-if="routeName=='Character'">
           <li class="open">
-            <a href="#" class="dropdown-toggle btn-magnify" data-toggle="dropdown">
-              <i class="ti-panel"></i>
-              <p>Stats</p>
+            <a href="/character/survivors" class="dropdown-toggle btn-magnify" data-toggle="dropdown">
+              <img src="static/img/ico_key.png" style="max-width:25px;" alt="">
+              <p>생존자</p>
             </a>
           </li>
-             <drop-down title="5 Notifications" icon="ti-bell">
-               <li><a href="#">Notification 1</a></li>
-               <li><a href="#">Notification 2</a></li>
-               <li><a href="#">Notification 3</a></li>
-               <li><a href="#">Notification 4</a></li>
-               <li><a href="#">Another notification</a></li>
-             </drop-down>
           <li>
-            <a href="#" class="btn-rotate">
-              <i class="ti-settings"></i>
-              <p>
-                Settings
-              </p>
+            <a href="/character/killers" class="dropdown-toggle btn-magnify" data-toggle="dropdown">
+              <img src="static/img/ico_sikgu.png" style="max-width:25px;" alt="">
+              <p>살인마</p>
             </a>
           </li>
         </ul>

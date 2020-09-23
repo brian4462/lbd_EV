@@ -3,26 +3,17 @@
     <router-view></router-view>
     <!--This sidebar appears only for screens smaller than 992px-->
     <side-bar type="navbar" :sidebar-links="$sidebar.sidebarLinks">
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav" v-if="routeName=='Character'">
         <li>
-          <a class="dropdown-toggle" data-toggle="dropdown">
-            <i class="ti-panel"></i>
-            <p>Stats</p>
+          <a href="/character/survivors" class="dropdown-toggle btn-magnify" data-toggle="dropdown">
+            <img src="static/img/ico_key.png" style="max-width:25px;" alt="">
+            <p>생존자</p>
           </a>
         </li>
-        <drop-down title="5 Notifications" icon="ti-bell">
-
-          <li><a>Notification 1</a></li>
-          <li><a>Notification 2</a></li>
-          <li><a>Notification 3</a></li>
-          <li><a>Notification 4</a></li>
-          <li><a>Another notification</a></li>
-
-        </drop-down>
         <li>
-          <a>
-            <i class="ti-settings"></i>
-            <p>Settings</p>
+          <a href="/character/killers" class="dropdown-toggle btn-magnify" data-toggle="dropdown">
+            <img src="static/img/ico_sikgu.png" style="max-width:25px;" alt="">
+            <p>살인마</p>
           </a>
         </li>
         <li class="divider"></li>
@@ -32,7 +23,19 @@
 </template>
 
 <script>
-  export default {}
+  export default {
+    computed: {
+      routeName () {
+        const {name} = this.$route
+        return this.capitalizeFirstLetter(name)
+      }
+    },
+    methods: {
+      capitalizeFirstLetter (string) {
+        return string.charAt(0).toUpperCase() + string.slice(1)
+      }
+    }
+  }
 </script>
 
 <style lang="scss"></style>

@@ -9,11 +9,11 @@
     <!-- -->
     <div class="sidebar-wrapper" id="style-3">
       <div class="logo">
-        <a href="#" class="simple-text">
+        <a href="/" class="simple-text">
             <div class="logo-img">
-                <img src="static/img/vue-logo.png" alt="">
+                <img src="static/img/ico_skeleton.png" alt="">
             </div>
-          Paper Dashboard
+          Lead by Daylight
         </a>
       </div>
       <slot>
