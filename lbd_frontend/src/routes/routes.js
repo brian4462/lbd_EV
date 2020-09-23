@@ -19,7 +19,20 @@ const routes = [
       {
         path: "character",
         name: "character",
-        component: Overview
+        component: Overview,
+        redirect: "/character/suvivors",
+        children:[
+          {
+            path: "suvivors",
+            name: "suvivors",
+            component: Overview
+          },
+          {
+            path: "killers",
+            name: "killers",
+            component: Overview
+          },
+        ]
       },
       {
         path: "map",

@@ -23,9 +23,9 @@
         <!--By default vue-router adds an active class to each route link. This way the links are colored when clicked-->
         <router-link v-for="(link,index) in sidebarLinks" :to="link.path" tag="li" :ref="link.name" :key="link.name + index">
           <a>
-            <i :class="link.icon"></i>
-
-            <p>{{link.name}}
+            <img :src="link.icon" style="max-width:35px; margin-right:10px;">
+            <!-- <i :class="link.icon"></i> -->
+            <p style="display:inline-block;">{{link.name}}
             </p>
           </a>
         </router-link>

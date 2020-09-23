@@ -5,22 +5,22 @@ const SidebarStore = {
   sidebarLinks: [
     {
       name: '캐릭터',
-      icon: 'ti-user',
+      icon: 'static/img/ico_user.png',
       path: '/character'
     },
     {
       name: '지도',
-      icon: 'ti-location-pin',
+      icon: 'static/img/ico_map.png',
       path: '/map'
     },
     {
       name: '기능',
-      icon: 'ti-game',
+      icon: 'static/img/iconHelpLoading_trapper.png',
       path: '/func'
     },
     {
       name: '공지',
-      icon: 'ti-announcement',
+      icon: 'static/img/iconStatusEffects_madness.png',
       path: '/announcement'
     },
   ],
