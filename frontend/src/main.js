@@ -9,6 +9,19 @@ import axios from 'axios'
 Vue.prototype.$http = axios
 /* axios END */
 
+/* vue-mq START */
+// 미디어 쿼리 관련
+import VueMq from 'vue-mq'
+Vue.use(VueMq,{
+  breakpoints: {
+    mobile: 450,
+    tablet: 900,
+    laptop: 1250,
+    desktop: Infinity,
+  }
+})
+/* vue-mq END */
+
 /* Bootstrap START */
 import BootstrapVue from 'bootstrap-vue';
 import 'bootstrap/dist/css/bootstrap.min.css'

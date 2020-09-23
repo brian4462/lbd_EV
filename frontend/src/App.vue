@@ -8,11 +8,20 @@
         <b-row class="subject">
           <b-col>Lead By Daylight</b-col>
         </b-row>
-        <b-row class="menus">
-          <b-col cols='2'></b-col>
-          <b-col v-for="menu in menus" v-bind:id="'MN'+menu.id" v-bind:key="menu.id">{{menu.menu_nm}}</b-col>
-          <b-col cols='2'></b-col>
-        </b-row>
+        <div>
+          <b-navbar toggleable="lg" type="dark">
+            <b-navbar-brand href="#">Home</b-navbar-brand>
+            <b-navbar-toggle target="nav-collapse">
+            </b-navbar-toggle>
+
+            <b-collapse id="nav-collapse" is-nav>
+              <b-navbar-nav>
+                <b-nav-item class="mr-auto" style="margin-left:20px;" v-for="menu in menus" v-bind:id="'MN'+menu.id" v-bind:key="menu.id">{{menu.menu_nm}}</b-nav-item>
+              </b-navbar-nav>
+            </b-collapse>
+            
+          </b-navbar>
+        </div>
       </div>
       <!--HAEDER END-->
       <!--ARTICLE START-->
