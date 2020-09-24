@@ -108,7 +108,11 @@
     methods: {
       findActiveLink () {
         this.sidebarLinks.find((element, index) => {
-          let found = element.path === this.$route.path
+          var viewPath = this.$route.path
+          if(viewPath == '/character/survivors' || viewPath == '/character/killers'){
+            viewPath = '/character'
+          }
+          let found = element.path === viewPath
           if (found) {
             this.activeLinkIndex = index
           }
