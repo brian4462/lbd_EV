@@ -6,13 +6,13 @@
       <ul class="nav navbar-nav" v-if="routeName=='Character'">
         <li>
           <a href="/character/survivors" class="dropdown-toggle btn-magnify" data-toggle="dropdown">
-            <img src="static/img/ico_key.png" style="max-width:25px;" alt="">
+            <img src="/static/img/ico_key.png" style="max-width:25px;" alt="">
             <p>생존자</p>
           </a>
         </li>
         <li>
           <a href="/character/killers" class="dropdown-toggle btn-magnify" data-toggle="dropdown">
-            <img src="static/img/ico_sikgu.png" style="max-width:25px;" alt="">
+            <img src="/static/img/ico_sikgu.png" style="max-width:25px;" alt="">
             <p>살인마</p>
           </a>
         </li>

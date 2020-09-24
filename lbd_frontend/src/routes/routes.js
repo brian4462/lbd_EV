@@ -5,6 +5,11 @@ import NotFound from '../components/GeneralViews/NotFoundPage.vue'
 // Admin pages
 import Overview from 'src/components/Dashboard/Views/Overview.vue'
 
+// Character pages
+import Charcter from 'src/components/Dashboard/Views/Character/Character.vue'
+import Survivors from 'src/components/Dashboard/Views/Character/Survivors.vue'
+import Killers from 'src/components/Dashboard/Views/Character/Killers.vue'
+
 const routes = [
   {
     path: "/",
@@ -19,19 +24,19 @@ const routes = [
       {
         path: "character",
         name: "character",
-        component: Overview,
-        redirect: "/character/suvivors",
+        component: Charcter,
+        redirect: "/character/survivors",
         children:[
           {
-            path: "suvivors",
-            name: "suvivors",
-            component: Overview
+            path: "survivors",
+            name: "survivors",
+            component: Survivors
           },
           {
             path: "killers",
             name: "killers",
-            component: Overview
-          },
+            component: Killers,
+          }
         ]
       },
       {

@@ -8,7 +8,7 @@
           <span class="icon-bar bar2"></span>
           <span class="icon-bar bar3"></span>
         </button>
-        <a class="navbar-brand" v-if="routeName=='Suvivors'">생존자(Survivors)</a>
+        <a class="navbar-brand" v-if="routeName=='Survivors'">생존자(Survivors)</a>
         <a class="navbar-brand" v-if="routeName=='Killers'">살인마(Killers)</a>
         <a class="navbar-brand" v-else-if="routeName=='Map'">지도(Map)</a>
         <a class="navbar-brand" v-else-if="routeName=='Func'">기능(Function)</a>
@@ -16,15 +16,15 @@
         <a class="navbar-brand" v-else-if="routeName=='Overview'">Welcome to Lead by Daylight..</a>
       </div>
       <div class="collapse navbar-collapse">
-        <ul class="nav navbar-nav navbar-right" v-if="routeName=='Suvivors'">
+        <ul class="nav navbar-nav navbar-right" v-if="routeName=='Survivors'">
           <li class="open">
-            <a href="/character/survivors" class="dropdown-toggle btn-magnify" data-toggle="dropdown">
+            <a href="survivors" class="dropdown-toggle btn-magnify" data-toggle="dropdown">
               <img src="/static/img/ico_key.png" style="max-width:25px;" alt="">
               <p>생존자</p>
             </a>
           </li>
           <li>
-            <a href="/character/killers" class="dropdown-toggle btn-magnify" data-toggle="dropdown">
+            <a href="killers" class="dropdown-toggle btn-magnify" data-toggle="dropdown">
               <img src="/static/img/ico_sikgu.png" style="max-width:25px;" alt="">
               <p>살인마</p>
             </a>
@@ -32,13 +32,13 @@
         </ul>
         <ul class="nav navbar-nav navbar-right" v-if="routeName=='Killers'">
           <li class="open">
-            <a href="/character/survivors" class="dropdown-toggle btn-magnify" data-toggle="dropdown">
+            <a href="survivors" class="dropdown-toggle btn-magnify" data-toggle="dropdown">
               <img src="/static/img/ico_key.png" style="max-width:25px;" alt="">
               <p>생존자</p>
             </a>
           </li>
           <li>
-            <a href="/character/killers" class="dropdown-toggle btn-magnify" data-toggle="dropdown">
+            <a href="killers" class="dropdown-toggle btn-magnify" data-toggle="dropdown">
               <img src="/static/img/ico_sikgu.png" style="max-width:25px;" alt="">
               <p>살인마</p>
             </a>

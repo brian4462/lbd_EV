@@ -5,22 +5,22 @@ const SidebarStore = {
   sidebarLinks: [
     {
       name: '캐릭터',
-      icon: 'static/img/ico_user.png',
+      icon: '/static/img/ico_user.png',
       path: '/character'
     },
     {
       name: '지도',
-      icon: 'static/img/ico_map.png',
+      icon: '/static/img/ico_map.png',
       path: '/map'
     },
     {
       name: '기능',
-      icon: 'static/img/iconHelpLoading_trapper.png',
+      icon: '/static/img/iconHelpLoading_trapper.png',
       path: '/func'
     },
     {
       name: '공지',
-      icon: 'static/img/iconStatusEffects_madness.png',
+      icon: '/static/img/iconStatusEffects_madness.png',
       path: '/announcement'
     },
   ],
