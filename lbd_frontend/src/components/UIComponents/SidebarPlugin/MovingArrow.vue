@@ -28,7 +28,7 @@
   $bg-nude: #f4f3ef !default;
   
   .moving-arrow {
-    border-right: 17px solid $bg-nude;
+    border-right: 17px solid #41b883;
     border-top: 17px solid transparent;
     border-bottom: 17px solid transparent;
     display: inline-block;

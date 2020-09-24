@@ -8,12 +8,12 @@
           <span class="icon-bar bar2"></span>
           <span class="icon-bar bar3"></span>
         </button>
-        <a class="navbar-brand" v-if="routeName=='Survivors'">생존자(Survivors)</a>
-        <a class="navbar-brand" v-if="routeName=='Killers'">살인마(Killers)</a>
-        <a class="navbar-brand" v-else-if="routeName=='Map'">지도(Map)</a>
-        <a class="navbar-brand" v-else-if="routeName=='Func'">기능(Function)</a>
-        <a class="navbar-brand" v-else-if="routeName=='Announcement'">알림(Announcement)</a>
-        <a class="navbar-brand" v-else-if="routeName=='Overview'">Welcome to Lead by Daylight..</a>
+        <a class="navbar-brand" style="color:#f3bb43;" v-if="routeName=='Survivors'">생존자(Survivors)</a>
+        <a class="navbar-brand" style="color:#f3bb43;" v-else-if="routeName=='Killers'">살인마(Killers)</a>
+        <a class="navbar-brand" style="color:#f3bb43;" v-else-if="routeName=='Map'">지도(Map)</a>
+        <a class="navbar-brand" style="color:#f3bb43;" v-else-if="routeName=='Func'">기능(Function)</a>
+        <a class="navbar-brand" style="color:#f3bb43;" v-else-if="routeName=='Announcement'">알림(Announcement)</a>
+        <a class="navbar-brand" style="color:#f3bb43;" v-else-if="routeName=='Overview'">Welcome to Lead by Daylight..</a>
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-right" v-if="routeName=='Survivors'">
