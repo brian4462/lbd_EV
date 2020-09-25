@@ -2,15 +2,18 @@
   <div>
     <!--Stats cards-->
     <div class="row">
-      <div class="col-lg-3 col-md-4 col-sm-6" v-for="survivors in survivorsCards" :key="survivors.surv_id">
+      <div :class="['col-lg-3 col-md-4 col-sm-6 ex_custom',selected==survivors.surv_id?'active':'']" @click="toggleActive(survivors.surv_id)" v-for="survivors in survivorsCards"  :id ="'div_'+survivors.surv_id" :ref="survivors.surv_id" :key="survivors.surv_id">
         <stats-card>
-          <div slot="header">
-            <img style="max-width:120px;max-height:170px;" :src="survivors.photo_path">
-          </div>
-          <div class="numbers" slot="content">
-            <p>{{survivors.surv_nm_ko}}</p>
-            {{survivors.surv_nm_en}}
-          </div>
+            <div slot="header">
+              <img style="max-width:120px;max-height:170px;" :src="survivors.photo_path">
+            </div>
+            <div class="numbers" slot="content">
+              <p>{{survivors.surv_nm_ko}}</p>
+              {{survivors.surv_nm_en}}
+            </div>
+            <div class="body" slot="body">
+              Chart data used to render stats, charts. Should be replaced with server data
+            </div>
         </stats-card>
       </div>
     </div>
@@ -30,21 +33,41 @@
      */
     data() {
         return {
-        survivorsCards: []
+          selected : null, 
+          survivorsCards: []
         }
     },
     created(){
       this.$http.get('/api/character/getSurvivors')
       .then((res) => {
           this.survivorsCards = res.data;
-          console.log(this.survivorsCards);
       })
       .catch((err)=>{
           console.error(err);
       });
+    },
+    methods: {
+      toggleActive: function (id, event) {
+        if(this.selected != null && this.selected==id){
+          this.selected = null;
+        }else{
+          this.selected=id;
+        }
+        
+      }
+    
     }
     };
 </script>
 <style>
+  .ex_custom {
+    transition:all .3s ease;
+  }
+  .ex_custom .body {
+    display: none;
+  }
+  .ex_custom:active .body{
+    display: block;
+  }
 
 </style>

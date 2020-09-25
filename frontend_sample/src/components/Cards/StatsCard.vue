@@ -9,6 +9,9 @@
           <slot name="content"></slot>
         </div>
       </div>
+      <div class="card-body" v-if="$slots.default">
+        <slot></slot>
+      </div>
       <div v-if="$slots.footer">
         <hr/>
         <slot name="footer"></slot>
