@@ -2,14 +2,14 @@
   <div>
     <!--Stats cards-->
     <div class="row">
-      <div class="col-md-6 col-lg-3 col-xl-3" v-for="survivors in survivorsCards" :key="survivors.en_nm">
+      <div class="col-lg-3 col-md-4 col-sm-6" v-for="survivors in survivorsCards" :key="survivors.surv_id">
         <stats-card>
           <div slot="header">
-            <img style="max-width:120px;" :src="survivors.src">
+            <img style="max-width:120px;max-height:170px;" :src="survivors.photo_path">
           </div>
           <div class="numbers" slot="content">
-            <p>{{survivors.ko_nm}}</p>
-            {{survivors.en_nm}}
+            <p>{{survivors.surv_nm_ko}}</p>
+            {{survivors.surv_nm_en}}
           </div>
         </stats-card>
       </div>
@@ -30,49 +30,18 @@
      */
     data() {
         return {
-        survivorsCards: [
-            {
-            src: "/static/img/survivors/ace1.png",
-            ko_nm: "에이스 비스콘티",
-            en_nm: "Ace Visconti",
-            },
-            {
-            src: "/static/img/survivors/ace1.png",
-            ko_nm: "에이스 비스콘티",
-            en_nm: "Ace Visconti",
-            },
-            {
-            src: "/static/img/survivors/ace1.png",
-            ko_nm: "에이스 비스콘티",
-            en_nm: "Ace Visconti",
-            },
-            {
-            src: "/static/img/survivors/ace1.png",
-            ko_nm: "에이스 비스콘티",
-            en_nm: "Ace Visconti",
-            },
-            {
-            src: "/static/img/survivors/ace1.png",
-            ko_nm: "에이스 비스콘티",
-            en_nm: "Ace Visconti",
-            },
-            {
-            src: "/static/img/survivors/ace1.png",
-            ko_nm: "에이스 비스콘티",
-            en_nm: "Ace Visconti",
-            },
-            {
-            src: "/static/img/survivors/ace1.png",
-            ko_nm: "에이스 비스콘티",
-            en_nm: "Ace Visconti",
-            },
-            {
-            src: "/static/img/survivors/ace1.png",
-            ko_nm: "에이스 비스콘티",
-            en_nm: "Ace Visconti",
-            }
-        ]
+        survivorsCards: []
         }
+    },
+    created(){
+      this.$http.get('/api/character/getSurvivors')
+      .then((res) => {
+          this.survivorsCards = res.data;
+          console.log(this.survivorsCards);
+      })
+      .catch((err)=>{
+          console.error(err);
+      });
     }
     };
 </script>

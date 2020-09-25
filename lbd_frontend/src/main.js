@@ -1,6 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
+/* axios START */
+import axios from 'axios'
+Vue.prototype.$http = axios
+/* axios END */
+
 // Plugins
 import GlobalComponents from './globalComponents'
 import GlobalDirectives from './globalDirectives'

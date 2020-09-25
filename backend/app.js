@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var menusRouter = require('./routes/menus');
+var characterRouter = require('./routes/character/character');
 
 var app = express();
 
@@ -24,6 +25,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 //root페이지에서 menu를 사용하므로 순서에 주의
 app.use('/api/menus',menusRouter);
 app.use('/', indexRouter);
+app.use('/api/character', characterRouter);
+
 
 
 // catch 404 and forward to error handler
