@@ -2,7 +2,7 @@
   <div>
     <!--Stats cards-->
     <div class="row">
-      <div :class="['col-lg-3 col-md-4 col-sm-6 ex_custom',selected==survivors.surv_id?'active':'']" @click="toggleActive(survivors.surv_id)" v-for="survivors in survivorsCards"  :id ="'div_'+survivors.surv_id" :ref="survivors.surv_id" :key="survivors.surv_id">
+      <div :class="[selected==survivors.surv_id?'col-12':'col-lg-3 col-md-4 col-sm-6 ex_custom',selected==survivors.surv_id?'active':'']" @click="toggleActive(survivors.surv_id)" v-for="survivors in survivorsCards"  :id ="'div_'+survivors.surv_id" :ref="survivors.surv_id" :key="survivors.surv_id">
         <stats-card>
             <div slot="header">
               <img style="max-width:120px;max-height:170px;" :src="survivors.photo_path">
@@ -62,6 +62,9 @@
 <style>
   .ex_custom {
     transition:all .3s ease;
+  }
+  .ex_custom:active {
+    position:static;
   }
   .ex_custom .body {
     display: none;
