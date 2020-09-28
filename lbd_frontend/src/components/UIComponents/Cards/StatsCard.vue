@@ -10,9 +10,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-xs-2"></div>
-        <div class="col-xs-8"><slot name="body"></slot></div>
-        <div class="col-xs-2"></div>
+        <div class="col-xs-offset-1 col-xs-10 col-xs-offset-1"><slot name="body"></slot></div>
       </div>
     </div>
   

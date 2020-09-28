@@ -11,8 +11,7 @@
               <p>{{survivors.surv_nm_ko}}</p>
               {{survivors.surv_nm_en}}
             </div>
-            <div class="body" slot="body" v-show="selected==survivors.surv_id?true:false">
-              Chart data used to render stats, charts. Should be replaced with server data
+            <div class="body" slot="body" v-show="selected==survivors.surv_id?true:false" v-html="survivors.description">
             </div>
         </stats-card>
       </div>
@@ -62,6 +61,10 @@
 <style>
   .ex_custom {
     transition:all .3s ease;
+  }
+  .ex_custom .body {
+    margin-top:20px;
+    margin-bottom:20px;
   }
 
 </style>
