@@ -2,10 +2,10 @@
   <div class="card">
     <div class="content">
       <div class="row" style="cursor:pointer;" >
-        <div class="col-xs-5">
+        <div class="col-md-5">
           <slot name="header"></slot>
         </div>
-        <div class="col-xs-7">
+        <div class="col-md-7">
           <slot name="content"></slot>
         </div>
       </div>

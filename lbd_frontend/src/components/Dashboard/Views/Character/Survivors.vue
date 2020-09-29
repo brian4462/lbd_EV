@@ -18,9 +18,9 @@
               <div class="summary">
                   <div class="row">
                     <transition name="fadeLeft">
-                      <div class="col-xs-4" v-if="selected==survivors.surv_id"><img :src="survivors.photo_path2"></div>
+                      <div class="col-md-4" v-if="selected==survivors.surv_id"><img :src="survivors.photo_path2"></div>
                     </transition>
-                    <div class="col-xs-8">
+                    <div class="col-md-8">
                       <transition name="fadeLeft">
                         <div v-if="selected==survivors.surv_id" style="transition-delay: 1s;"><h2>{{survivors.surv_nm_ko}}</h2></div>
                       </transition>
@@ -46,7 +46,7 @@
                   </div>
               </div>
               <transition name="fade">
-                <div v-if="selected==survivors.surv_id" class="description" style="margin-top:20px; transition-delay: 2.5s;" v-html="survivors.description"></div>
+                <div v-if="selected==survivors.surv_id" class="description" style="margin-top:20px; transition-delay: 1.5s;" v-html="survivors.description"></div>
               <transition name="fade">
             </div>
         </stats-card>
