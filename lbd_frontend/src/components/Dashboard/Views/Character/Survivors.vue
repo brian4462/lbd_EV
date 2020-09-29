@@ -12,6 +12,9 @@
               {{survivors.surv_nm_en}}
             </div>
             <div class="body" slot="body" v-show="selected==survivors.surv_id?true:false">
+              <button type="button" class="close" style="color:white;" aria-label="Close" @click="closeBody">
+                <span aria-hidden="true">&times;</span>
+              </button>
               <div class="summary">
                   <div class="row">
                     <transition name="fadeLeft">
@@ -65,7 +68,8 @@
      */
     data() {
         return {
-          selected : null, 
+          selected : null,
+          closed : false,
           survivorsCards: []
         }
     },
@@ -80,12 +84,21 @@
     },
     methods: {
       toggleActive: function (id, event) {
-        if(this.selected != null && this.selected==id){
-          this.selected = null;
+        if(this.selected != null){
+          if(this.selected==id){
+            if(this.closed){
+              this.selected=null;
+              this.closed=false;
+            }
+          }else{
+            this.selected=id;
+          }
         }else{
           this.selected=id;
         }
-        
+      },
+      closeBody: function(event){
+        this.closed=true;
       }
     
     }
